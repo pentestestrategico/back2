@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Gerenciar Usuários</h1>
+<input [(ngModel)]="usuario.nome" placeholder="Nome">
+<input [(ngModel)]="usuario.email" placeholder="E-mail">
+<button (click)="salvar()" >{{editando ? 'Atualizar' : 'Adicionar'}}</button>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Ações</th>
+    </tr>
+    <tr *ngFor="let u of usuarios" >
+        <td>{{u.nome}}</td>
+        <td>{{u.email}}</td>
+        <td>
+            <button (click)="editar(u)" >Editar</button> 
+            <button (click)="excluir(u.id!)" >Excluir</button>
+        </td>
+    </tr>
+    
+</table>
+</div>
